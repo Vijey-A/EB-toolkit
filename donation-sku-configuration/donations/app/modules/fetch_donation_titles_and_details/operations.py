@@ -1,4 +1,4 @@
-from lib.dbutils import source_collection
+from donations.app.lib.dbutils import source_collection
 
 # to fetch the details from source collection and return a dictionary where the key is the title and the value is the context
 def fetch_donation_sku_details():

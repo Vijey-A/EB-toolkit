@@ -1,4 +1,4 @@
-from lib.dbutils import destination_collection
+from donations.app.lib.dbutils import destination_collection
 
 # in a doctionary where the key is the "Sites" string and the value is where there is only three key "com","ca"and "outlet-com" and the value is donationDetails" field "com","ca","outlet-com" key 
 # which is to be fetched from destination_collection where "productVariantId:'sku30042'"

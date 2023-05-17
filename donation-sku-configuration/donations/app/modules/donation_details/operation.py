@@ -1,4 +1,3 @@
-
 from lib.dbutils import destination_collection
 
 def fetch_donation_details():
