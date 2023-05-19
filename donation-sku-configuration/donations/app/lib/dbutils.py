@@ -1,9 +1,8 @@
-from pymongo import MongoClient
-from donations.app.lib.constants import DEV_DB_URL
+from pymongo import MongoClient, ReadPreference
 
-client = MongoClient(DEV_DB_URL)
+def __getConnection(db_url, domain=""):
+    return MongoClient(db_url).get_database(domain, read_preference=ReadPreference.SECONDARY_PREFERRED)
 
-source_db = client.playground_eddiebauer
-destination_db = client.atomic_pim
-source_collection = source_db.donation_sku
-destination_collection = destination_db.productvariants
+def find(query, db_url, domain, collection):
+    print("Connecting MongoDB for the collection to find the data")
+    return list(__getConnection(db_url, domain)[collection].find(query))
